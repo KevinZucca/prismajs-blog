@@ -87,6 +87,29 @@ function getPublishedPosts() {
     .catch((err) => console.error(err));
 }
 
+function getPostFromContent(content) {
+  prisma.post
+    .findMany({
+      select: {
+        id: true,
+        title: true,
+        slug: true,
+        image: true,
+        content: true,
+        published: true,
+      },
+      where: {
+        content: {
+          contains: content,
+        },
+      },
+    })
+    .then((posts) => {
+      console.log(`Tutti i post contenenti '${content}' :`, posts);
+    })
+    .catch((err) => console.error(err));
+}
+
 function deletePost(id) {
   prisma.post
     .delete({
@@ -105,4 +128,5 @@ function deletePost(id) {
 // getAllPosts();
 // editPost(4);
 // deletePost(10)
-getPublishedPosts();
+// getPublishedPosts();
+getPostFromContent("un");
