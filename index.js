@@ -47,6 +47,23 @@ function allPosts() {
     .catch((err) => console.error(err));
 }
 
+function editPost(id) {
+  prisma.post
+    .update({
+      where: {
+        id: id,
+      },
+      data: {
+        content: "Articolo attualmente senza contenuto",
+      },
+    })
+    .then((post) => {
+      console.log("post aggiornato: ", post);
+    })
+    .catch((err) => console.error(err));
+}
+
 // create();
 // read("intervista-sviluppatore-indie-game");
-allPosts();
+// allPosts();
+editPost(4);
