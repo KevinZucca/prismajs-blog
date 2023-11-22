@@ -17,7 +17,7 @@ function create() {
 
 function read(slug) {
   prisma.post
-    .findUnique({
+    .findUniqueOrThrow({
       where: {
         slug: slug,
       },
@@ -27,5 +27,26 @@ function read(slug) {
     });
 }
 
-create();
-read("intervista-sviluppatore-indie-game");
+function allPosts() {
+  prisma.post
+    .findMany({
+      select: {
+        id: true,
+        title: true,
+        slug: true,
+        image: true,
+        content: true,
+      },
+      orderBy: {
+        createdAt: "desc",
+      },
+    })
+    .then((posts) => {
+      console.log("Tutti i post: ", posts);
+    })
+    .catch((err) => console.error(err));
+}
+
+// create();
+// read("intervista-sviluppatore-indie-game");
+allPosts();
