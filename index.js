@@ -2,6 +2,7 @@ const { PrismaClient } = require("@prisma/client");
 const prisma = new PrismaClient();
 const posts = require("./posts.json");
 const { kebabCase } = require("lodash");
+const functionName = process.argv[2];
 
 function createSinglePost(title) {
   prisma.post
@@ -141,7 +142,35 @@ function deletePost(id) {
     .catch((err) => console.error(err));
 }
 
-createSinglePost("Nuovo post");
+// to execute functions from the console
+switch (functionName) {
+  case "createPost":
+    createSinglePost();
+    break;
+  case "createPosts":
+    createPosts();
+    break;
+  case "readPost":
+    readPost("intervista-sviluppatore-indie-game");
+    break;
+  case "getAllPosts":
+    getAllPosts();
+    break;
+  case "editPost":
+    editPost(4);
+    break;
+  case "deletePost":
+    deletePost(9);
+    break;
+  case "getPublishedPosts":
+    getPublishedPosts();
+    break;
+  case "getPostsFromContent":
+    getPostsFromContent("un");
+    break;
+}
+
+// createSinglePost("un altro post");
 // createPosts();
 // readPost("intervista-sviluppatore-indie-game");
 // getAllPosts();
