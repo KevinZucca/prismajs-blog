@@ -1,6 +1,24 @@
 const { PrismaClient } = require("@prisma/client");
 const prisma = new PrismaClient();
 const posts = require("./posts.json");
+const { kebabCase } = require("lodash");
+
+function createSinglePost(title) {
+  prisma.post
+    .create({
+      data: {
+        title: title,
+        slug: kebabCase(title),
+        image: "image_url.jpeg",
+        content: "Un nuovo post",
+        published: false,
+      },
+    })
+    .then((result) => {
+      console.log("Nuovo post: ", result);
+    })
+    .catch((err) => console.error(err));
+}
 
 function createPosts() {
   prisma.post
@@ -123,10 +141,11 @@ function deletePost(id) {
     .catch((err) => console.error(err));
 }
 
+createSinglePost("Nuovo post");
 // createPosts();
 // readPost("intervista-sviluppatore-indie-game");
 // getAllPosts();
 // editPost(4);
 // deletePost(10)
 // getPublishedPosts();
-getPostFromContent("un");
+// getPostFromContent("un");
