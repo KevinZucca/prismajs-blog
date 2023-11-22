@@ -1,0 +1,72 @@
+[
+    {
+        "title": "Recensione del nuovo gioco di avventura",
+        "slug": "recensione-nuovo-gioco-avventura",
+        "image": "image_url_1.jpg",
+        "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. ...",
+        "published": true
+    },
+    {
+        "title": "Guida strategica per il livello difficile",
+        "slug": "guida-strategica-livello-difficile",
+        "image": null,
+        "content": "In questa guida, esploreremo le migliori strategie per affrontare il livello difficile...",
+        "published": true
+    },
+    {
+        "title": "Intervista allo sviluppatore di un indie game",
+        "slug": "intervista-sviluppatore-indie-game",
+        "image": "image_url_2.jpg",
+        "content": "Abbiamo avuto l'opportunità di intervistare lo sviluppatore di un indie game molto interessante...",
+        "published": true
+    },
+    {
+        "title": "I 10 migliori giochi multiplayer del momento",
+        "slug": "top-10-giochi-multiplayer",
+        "image": "image_url_3.jpg",
+        "content": "Scopri i giochi multiplayer che stanno dominando le classifiche...",
+        "published": true
+    },
+    {
+        "title": "Retrogaming: Alla scoperta dei classici",
+        "slug": "retrogaming-scoperta-classici",
+        "image": "image_url_4.jpg",
+        "content": "Un viaggio nel passato alla ricerca dei giochi che hanno fatto la storia...",
+        "published": true
+    },
+    {
+        "title": "Analisi del trend degli esports",
+        "slug": "analisi-trend-esports",
+        "image": "image_url_5.jpg",
+        "content": "Esploriamo l'evoluzione e il trend degli esports nel mondo videoludico...",
+        "published": true
+    },
+    {
+        "title": "Le novità dal mondo degli sviluppatori di giochi",
+        "slug": "novita-mondo-sviluppatori",
+        "image": null,
+        "content": "Aggiornamenti e anteprime sulle ultime novità direttamente dagli sviluppatori...",
+        "published": true
+    },
+    {
+        "title": "I segreti dietro la grafica realistica nei videogiochi",
+        "slug": "segreti-grafica-realistica-videogiochi",
+        "image": "image_url_6.jpg",
+        "content": "Scopriamo i segreti e le tecnologie dietro la grafica realistica nei videogiochi moderni...",
+        "published": true
+    },
+    {
+        "title": "La storia dietro il successo di un indie game",
+        "slug": "storia-successo-indie-game",
+        "image": "image_url_7.jpg",
+        "content": "Una storia ispiratrice di come un piccolo indie game ha conquistato il cuore dei giocatori...",
+        "published": true
+    },
+    {
+        "title": "Giochi da non perdere nella prossima stagione",
+        "slug": "giochi-da-non-perdere-prossima-stagione",
+        "image": "image_url_8.jpg",
+        "content": "Una selezione dei giochi più attesi e promettenti della prossima stagione...",
+        "published": true
+    }
+]
