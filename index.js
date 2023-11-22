@@ -63,6 +63,30 @@ function editPost(id) {
     .catch((err) => console.error(err));
 }
 
+function getPublishedPosts() {
+  prisma.post
+    .findMany({
+      select: {
+        id: true,
+        title: true,
+        slug: true,
+        image: true,
+        content: true,
+        published: true,
+      },
+      where: {
+        published: true,
+      },
+      orderBy: {
+        createdAt: "desc",
+      },
+    })
+    .then((posts) => {
+      console.log("Tutti i post pubblicati: ", posts);
+    })
+    .catch((err) => console.error(err));
+}
+
 function deletePost(id) {
   prisma.post
     .delete({
@@ -80,4 +104,5 @@ function deletePost(id) {
 // readPost("intervista-sviluppatore-indie-game");
 // getAllPosts();
 // editPost(4);
-deletePost(10);
+// deletePost(10)
+getPublishedPosts();
