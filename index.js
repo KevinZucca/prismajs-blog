@@ -2,7 +2,7 @@ const { PrismaClient } = require("@prisma/client");
 const prisma = new PrismaClient();
 const posts = require("./posts.json");
 
-function create() {
+function createPosts() {
   prisma.post
     .createMany({
       data: posts.map((post) => {
@@ -15,7 +15,7 @@ function create() {
     .catch((err) => console.error(err));
 }
 
-function read(slug) {
+function readPost(slug) {
   prisma.post
     .findUniqueOrThrow({
       where: {
@@ -27,7 +27,7 @@ function read(slug) {
     });
 }
 
-function allPosts() {
+function getAllPosts() {
   prisma.post
     .findMany({
       select: {
@@ -63,7 +63,21 @@ function editPost(id) {
     .catch((err) => console.error(err));
 }
 
-// create();
-// read("intervista-sviluppatore-indie-game");
-// allPosts();
-editPost(4);
+function deletePost(id) {
+  prisma.post
+    .delete({
+      where: {
+        id: id,
+      },
+    })
+    .then((post) => {
+      console.log(`Il post ${post} è stato eliminato`);
+    })
+    .catch((err) => console.error(err));
+}
+
+// createPosts();
+// readPost("intervista-sviluppatore-indie-game");
+// getAllPosts();
+// editPost(4);
+deletePost(10);
